@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================
+         REGISTER
+    ========================== -->
+
+    <div id="registerPage" class="page">
+
+        <h1>Registration</h1>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="college"
+                placeholder="College"
+                required
+            >
+
+            <input
+                type="text"
+                id="division"
+                placeholder="Division"
+                required
+            >
+
+            <input
+                type="text"
+                id="degree"
+                placeholder="Degree"
+                required
+            >
+
+            <!-- ROLE -->
+
+            <select id="role" required>
+
+                <option value="">
+                    Select Role
+                </option>
+
+                <option value="student">
+                    Student
+                </option>
+
+                <option value="admin">
+                    Admin
+                </option>
+
+            </select>
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+
+        <p id="registerMessage"></p>
+
+
+        <p>
+
+            Already registered?
+
+            <button
+                class="linkButton"
+                onclick="showLogin()"
+            >
+                Login
+            </button>
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         LOGIN
+    ========================== -->
+
+    <div id="loginPage" class="page hidden">
+
+        <h1>Login</h1>
+
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+                required
+            >
+
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+            >
+
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <p id="loginMessage"></p>
+
+
+        <p>
+
+            New user?
+
+            <button
+                class="linkButton"
+                onclick="showRegister()"
+            >
+                Register
+            </button>
+
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <div id="dashboardPage" class="page hidden">
+
+        <h1>Quiz Dashboard</h1>
+
+
+        <p class="welcome">
+            Welcome
+            <span id="userRole"></span>
+        </p>
+
+
+        <div class="options">
+
+
+            <!-- ADMIN ONLY -->
+
+            <button
+                id="addQuestionButton"
+                onclick="showAddQuestion()"
+            >
+                Add Question
+            </button>
+
+
+            <!-- STUDENT + ADMIN -->
+
+            <button
+                onclick="showGetQuestion()"
+            >
+                Get Question
+            </button>
+
+
+            <!-- ADMIN ONLY -->
+
+            <button
+                id="deleteQuestionButton"
+                onclick="showDeleteQuestion()"
+            >
+                Delete Question
+            </button>
+
+
+            <button
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         ADD QUESTIONS
+    ========================== -->
+
+    <div id="addQuestionPage" class="page hidden">
+
+        <h1>Add Questions</h1>
+
+
+        <form id="questionForm">
+
+
+            <div id="questionList">
+
+                <!-- JavaScript creates questions here -->
+
+            </div>
+
+
+            <!-- ADD MORE -->
+
+            <button
+                type="button"
+                onclick="addQuestionForm()"
+            >
+                + Add Question
+            </button>
+
+
+            <!-- SUBMIT ALL -->
+
+            <button type="submit">
+                Submit All Questions
+            </button>
+
+
+        </form>
+
+
+        <p id="questionMessage"></p>
+
+
+        <button onclick="showDashboard()">
+            Back
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         GET QUESTIONS / QUIZ
+    ========================== -->
+
+    <div id="getQuestionPage" class="page hidden">
+
+        <h1>Quiz</h1>
+
+
+        <form id="quizForm">
+
+
+            <div id="questionsContainer">
+
+                <!-- Questions created by JS -->
+
+            </div>
+
+
+            <button type="submit">
+                Submit Quiz
+            </button>
+
+
+        </form>
+
+
+        <button onclick="showDashboard()">
+            Back
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         QUIZ REPORT
+    ========================== -->
+
+    <div id="reportPage" class="page hidden">
+
+        <h1>Quiz Report</h1>
+
+
+        <div class="report">
+
+
+            <p>
+
+                <strong>
+                    Correct:
+                </strong>
+
+                <span id="correctCount">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Wrong:
+                </strong>
+
+                <span id="wrongCount">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Marks:
+                </strong>
+
+                <span id="totalMarks">
+                    0
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Result:
+                </strong>
+
+                <span id="quizResult">
+                    -
+                </span>
+
+            </p>
+
+
+        </div>
+
+
+        <button onclick="showDashboard()">
+            Back to Dashboard
+        </button>
+
+
+        <button onclick="showGetQuestion()">
+            Try Again
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         DELETE QUESTION
+    ========================== -->
+
+    <div id="deleteQuestionPage" class="page hidden">
+
+        <h1>Delete Question</h1>
+
+
+        <form id="deleteForm">
+
+
+            <input
+                type="number"
+                id="questionId"
+                placeholder="Enter Question ID"
+                required
+            >
+
+
+            <button type="submit">
+                Delete Question
+            </button>
+
+
+        </form>
+
+
+        <p id="deleteMessage"></p>
+
+
+        <button onclick="showDashboard()">
+            Back
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
