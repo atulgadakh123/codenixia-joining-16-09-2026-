@@ -1,0 +1,57 @@
+employee = conn.execute(
+        "SELECT id FROM employee WHERE id = ?",
+        (employee_id,)
+    ).fetchone()
+
+    if employee is None:
+        conn.close()
+        return False
+    
+
+    // payment manegment
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment</title>
+    <link rel="stylesheet" href="../../Css/payment.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Make Payment</h1>
+
+        <form id="paymentForm">
+
+            <label for="employee_id">Employee ID</label>
+            <input type="number" id="employee_id" name="employee_id" required>
+            <button type="button" id="searchEmployee">Search Employee</button>
+
+            <label for="total_salary">Total Salary</label>
+            <input type="number" id="total_salary" name="total_salary" step="0.01" readonly>
+
+            <label for="amount_paid">Amount Paid</label>
+            <input type="number" id="amount_paid" name="amount_paid" step="0.01" min="0" required>
+
+            <label for="balance">Balance</label>
+            <input type="number" id="balance" name="balance" step="0.01" readonly>
+
+            <label for="payment_status">Payment Status</label>
+            <select id="payment_status" name="payment_status" required>
+                     <option value="pending">Pending</option>
+                     <option value="paid">Paid</option>
+            </select>
+
+            <button type="submit">Submit Payment</button>
+            <button type="button" onclick="openPage('payment.html')">Back</button>
+
+            <p id="message"></p>
+
+        </form>
+    </div>
+
+    <script src="../../Js/payment_manegment/make_payment.js"></script>
+</body>
+</html>
+//

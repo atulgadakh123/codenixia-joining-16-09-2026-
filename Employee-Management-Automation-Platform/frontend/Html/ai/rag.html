@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI RAG System</title>
+    <link rel="stylesheet" href="../../Css/rag.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>AI RAG System</h1>
+        <p>Ask questions from your knowledge base.</p>
+
+        <form id="ragForm">
+            <label for="question">Enter Your Question</label>
+            <textarea
+                id="question"
+                name="question"
+                placeholder="Ask your question here..."
+                required
+            ></textarea>
+
+            <button type="submit">Ask Question</button>
+        </form>
+
+        <div id="loading" style="display: none;">
+            Processing your question...
+        </div>
+
+        <div id="answerSection" style="display: none;">
+            <h2>Answer</h2>
+            <div id="answer"></div>
+        </div>
+
+        <p id="errorMessage"></p>
+
+        <button type="button" onclick="history.back()">Back</button>
+    </div>
+
+    <script src="../../Js/AI/rag.js"></script>
+</body>
+</html>

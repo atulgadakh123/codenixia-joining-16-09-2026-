@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Attendance</title>
+
+    <link rel="stylesheet" href="../../Css/attendance.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>All Attendance Records</h1>
+
+        <!-- Month and Year Filter -->
+        <div class="filter-container">
+
+            <label for="month">Month:</label>
+
+            <select id="month">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10" selected>October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+
+            <label for="year">Year:</label>
+
+            <select id="year">
+                <option value="2026" selected>2026</option>
+                <option value="2027">2027</option>
+            </select>
+
+            <button type="button" onclick="loadAttendance()">
+                Show Attendance
+            </button>
+
+        </div>
+
+        <!-- Attendance Table -->
+        <div class="table-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Attendance ID</th>
+                        <th>Employee ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="attendanceTableBody">
+                    <tr>
+                        <td colspan="5">Loading attendance records...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <p id="message"></p>
+
+        <button type="button" onclick="loadAttendance()">
+            Refresh
+        </button>
+
+        <button
+            type="button"
+            onclick="window.location.href='attendance.html'">
+            Back
+        </button>
+
+    </div>
+
+    <script src="../../Js/attendance_management/all_attendance.js"></script>
+
+</body>
+
+</html>

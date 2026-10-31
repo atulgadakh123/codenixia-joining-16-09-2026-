@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+
+    <link rel="stylesheet" href="../../Css/attendance.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <main class="main-content">
+
+            <header class="page-header">
+                <h1>Attendance Management</h1>
+                <button type="button" onclick="history.back()">Back</button>
+            </header>
+
+            <!-- Search Section -->
+            <section class="search-box">
+
+                <div class="form-group">
+                    <label for="employee_id">Employee ID</label>
+                    <input type="number" id="employee_id"
+                           placeholder="Employee ID">
+                </div>
+
+                <div class="form-group">
+                    <label for="attendance_date">Date</label>
+                    <input type="date" id="attendance_date">
+                </div>
+
+                <div class="form-group">
+                    <label for="month">Month</label>
+                    <select id="month">
+                        <option value="">--Select Month--</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <select id="year">
+                        <option value="">--Select Year--</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+
+                <button type="button" class="search-btn" id="search_btn">
+                    🔍 Search
+                </button>
+
+                <button type="button" class="clear-btn" id="add_attendance_btn">
+                     ➕ Add Attendance
+                </button>
+
+            </section>
+
+            <!-- Total Attendance -->
+            <section class="attendance-summary">
+
+                <h2>Total Attendance</h2>
+
+                <div class="summary-cards">
+
+                    <div class="summary-card total-days">
+                        <span class="card-icon">☑</span>
+                        <div>
+                            <p>Total Days/Total Employee</p>
+                            <h3 id="total_days"></h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-card present-days">
+                        <span class="card-icon">✔</span>
+                        <div>
+                            <p>Present Days</p>
+                            <h3 id="present_days"></h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-card absent-days">
+                        <span class="card-icon">✖</span>
+                        <div>
+                            <p>Absent Days</p>
+                            <h3 id="absent_days"></h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-card leave-days">
+                        <span class="card-icon">◷</span>
+                        <div>
+                            <p>Leave Days</p>
+                            <h3 id="leave_days"></h3>
+                        </div>
+                    </div>
+
+                    <div class="summary-card working-hours">
+                        <span class="card-icon">◷</span>
+                        <div>
+                            <p>Total Working Hours</p>
+                            <h3 id="total_working_hours"></h3>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Attendance Records -->
+            <section class="attendance-records">
+
+                <h2>Attendance Records</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>End Time</th>
+                                <th>Working Hour</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="attendance_table_body">
+                            <!-- JavaScript will insert attendance records here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+<script src="../../Js/attendance_management/attendance.js"></script>
+</body>
+</html>

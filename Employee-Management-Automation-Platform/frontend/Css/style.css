@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    background: #ffffff;
+    color: #102b59;
+    padding: 35px 25px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 300px;
+    background: #eef4ff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -180px;
+    right: -100px;
+    width: 450px;
+    height: 350px;
+    background: #f0edff;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 800;
+    color: #102b59;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+
+.title-line {
+    width: 96px;
+    height: 5px;
+    border-radius: 10px;
+    background: #2585ff;
+    margin: 0 auto 40px;
+}
+
+/* Five boxes in one row */
+.dashboard-menu {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Common card styling */
+.menu-card {
+    min-width: 0;
+    min-height: 370px;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 24px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(30, 64, 120, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(30, 64, 120, 0.12);
+}
+
+/* Background wave */
+.menu-card::after {
+    content: "";
+    position: absolute;
+    bottom: -38px;
+    left: -10%;
+    width: 120%;
+    height: 105px;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-3deg);
+    opacity: 0.65;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Add Employee */
+.add-card {
+    background: linear-gradient(145deg, #f7fffb, #eafff5);
+    border-color: #b9f3dc;
+}
+
+.add-card::after {
+    background: #a8f0d6;
+}
+
+/* View Employees */
+.view-card {
+    background: linear-gradient(145deg, #f8fcff, #edf6ff);
+    border-color: #c4e1ff;
+}
+
+.view-card::after {
+    background: #acd7ff;
+}
+
+/* Find Employee - different background */
+.find-card {
+    background: linear-gradient(145deg, #fbf7ff, #eee4ff);
+    border-color: #d5bdff;
+}
+
+.find-card::after {
+    background: #d2baff;
+}
+
+/* Update Employee */
+.update-card {
+    background: linear-gradient(145deg, #fffdf5, #fff8e6);
+    border-color: #ffe5a4;
+}
+
+.update-card::after {
+    background: #ffdf91;
+}
+
+/* Delete Employee */
+.delete-card {
+    background: linear-gradient(145deg, #fff9fa, #fff0f2);
+    border-color: #ffc3cb;
+}
+
+.delete-card::after {
+    background: #ffabb7;
+}
+
+/* Icons */
+.icon {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 46px;
+    font-weight: bold;
+    margin: 0 auto 18px;
+    position: relative;
+    z-index: 1;
+}
+
+.add-card .icon {
+    color: #00a76f;
+    background: #d8f9eb;
+}
+
+.view-card .icon {
+    color: #087bfa;
+    background: #dceeff;
+}
+
+.find-card .icon {
+    color: #7735d4;
+    background: #e5d5ff;
+}
+
+.update-card .icon {
+    color: #e99700;
+    background: #fff0c9;
+}
+
+.delete-card .icon {
+    color: #ed2635;
+    background: #ffe0e4;
+}
+
+/* Card headings */
+.menu-card h2 {
+    font-size: clamp(17px, 1.2vw, 22px);
+    font-weight: 750;
+    line-height: 1.35;
+    margin: 0 0 12px;
+    position: relative;
+    z-index: 1;
+    overflow-wrap: anywhere;
+}
+
+.add-card h2 {
+    color: #07563f;
+}
+
+.view-card h2 {
+    color: #123d80;
+}
+
+.find-card h2 {
+    color: #54249a;
+}
+
+.update-card h2 {
+    color: #714000;
+}
+
+.delete-card h2 {
+    color: #a41620;
+}
+
+/* Card description */
+.menu-card p {
+    color: #425575;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* All buttons have equal dimensions and padding */
+.menu-card button {
+    width: 100%;
+    max-width: 200px;
+    min-height: 50px;
+    padding: 12px 14px;
+    margin-top: auto;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.menu-card button:hover {
+    filter: brightness(0.93);
+    transform: scale(1.02);
+}
+
+.menu-card button span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* Button colors */
+.add-card button {
+    background: #05a970;
+}
+
+.view-card button {
+    background: #087efa;
+}
+
+.find-card button {
+    background: #7735d4;
+}
+
+.update-card button {
+    background: #e99700;
+}
+
+.delete-card button {
+    background: #e52232;
+}
+
+/* Back to Dashboard Card */
+.back-card {
+    width: min(650px, 100%);
+    min-height: 160px;
+    margin: 38px auto 0;
+    padding: 25px 35px;
+    border: 1px solid #ddd0ff;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #faf8ff, #f3edff);
+    box-shadow: 0 12px 25px rgba(95, 60, 180, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.back-card::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    bottom: -65px;
+    width: 110%;
+    height: 105px;
+    background: #e2d6ff;
+    border-radius: 50% 50% 0 0;
+    z-index: 0;
+}
+
+.back-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 17px 32px rgba(95, 60, 180, 0.15);
+}
+
+.back-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #873cff, #6327e9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.back-content {
+    position: relative;
+    z-index: 1;
+}
+
+.back-content h2 {
+    color: #25126f;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.back-content p {
+    color: #4d5d80;
+    font-size: 16px;
+}
+
+.back-arrow {
+    margin-left: auto;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e9e0ff;
+    color: #813cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Laptop and smaller desktops */
+@media (max-width: 1250px) {
+    .dashboard-menu {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .menu-card {
+        min-height: 350px;
+    }
+
+    .menu-card h2 {
+        font-size: 21px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    body {
+        padding: 30px 20px;
+    }
+
+    .dashboard-menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .menu-card {
+        min-height: 340px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+    body {
+        padding: 25px 14px;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .title-line {
+        margin-bottom: 28px;
+    }
+
+    .dashboard-menu {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .menu-card {
+        min-height: 320px;
+        padding: 24px 18px;
+    }
+
+    .menu-card h2 {
+        font-size: 22px;
+    }
+
+    .menu-card p {
+        font-size: 16px;
+    }
+
+    .menu-card button {
+        max-width: 220px;
+    }
+
+    .back-card {
+        padding: 20px 14px;
+        gap: 12px;
+        min-height: 135px;
+    }
+
+    .back-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 36px;
+    }
+
+    .back-content h2 {
+        font-size: 17px;
+    }
+
+    .back-content p {
+        font-size: 13px;
+    }
+
+    .back-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 27px;
+    }
+}

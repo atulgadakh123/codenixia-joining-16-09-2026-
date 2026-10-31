@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+
+    <link rel="stylesheet" href="../../Css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Employee Management System</h1>
+        <div class="title-line"></div>
+
+        <div class="dashboard-menu">
+
+            <!-- Add Employee -->
+            <div class="menu-card add-card">
+                <div class="icon">👤+</div>
+                <h2>Add Employee</h2>
+                <p>Add new employee details<br>to the system</p>
+
+                <button onclick="openPage('add_employee.html')">
+                    Open <span>➜</span>
+                </button>
+            </div>
+
+            <!-- View Employees -->
+            <div class="menu-card view-card">
+                <div class="icon">👥</div>
+                <h2>View Employees</h2>
+                <p>View and search all<br>employee records</p>
+
+                <button onclick="openPage('view_employee.html')">
+                    Open <span>➜</span>
+                </button>
+            </div>
+             <!-- View Employees -->
+            <div class="menu-card view-card">
+    <div class="icon">🔍</div>
+    <h2>Find Employee</h2>
+    <p>Search employee<br>records by ID</p>
+
+    <button onclick="openPage('find_id.html')">
+        Find Employee <span>➜</span>
+    </button>
+</div>
+
+            <!-- Update Employee -->
+            <div class="menu-card update-card">
+                <div class="icon">📝</div>
+                <h2>Update Employee</h2>
+                <p>Update existing<br>employee information</p>
+
+                <button onclick="openPage('update_employee.html')">
+                    Open <span>➜</span>
+                </button>
+            </div>
+
+            <!-- Delete Employee -->
+            <div class="menu-card delete-card">
+                <div class="icon">🗑️</div>
+                <h2>Delete Employee</h2>
+                <p>Remove employee record<br>from the system</p>
+
+                <button onclick="openPage('delete_employee.html')">
+                    Open <span>➜</span>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Back to Dashboard -->
+        <div class="back-card" onclick="openPage('../dashboard.html')">
+            <div class="back-icon">←</div>
+
+            <div class="back-content">
+                <h2>Back to Dashboard</h2>
+                <p>Go to main dashboard</p>
+            </div>
+
+            <div class="back-arrow">›</div>
+        </div>
+
+    </div>
+
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

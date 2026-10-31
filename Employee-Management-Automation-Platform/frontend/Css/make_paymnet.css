@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 28px;
+    color: #1d4ed8;
+    font-size: 28px;
+}
+
+#paymentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 8px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    background: #ffffff;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+input[readonly] {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#searchEmployee {
+    background: #2563eb;
+    color: white;
+}
+
+#searchEmployee:hover {
+    background: #1d4ed8;
+}
+
+button[type="submit"] {
+    background: #16a34a;
+    color: white;
+    margin-top: 12px;
+}
+
+button[type="submit"]:hover {
+    background: #15803d;
+}
+
+button[onclick] {
+    background: #64748b;
+    color: white;
+}
+
+button[onclick]:hover {
+    background: #475569;
+}
+
+#message {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        padding: 22px 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

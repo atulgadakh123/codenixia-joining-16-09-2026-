@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="../Css/dashboard.css">
+    <!-- <link rel="stylesheet" href="" -->
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-icon">👥</span>
+        Employee Management System
+    </div>
+
+    <div class="top-actions">
+        <strong onclick="window.location.href='../Html/login.html'">Login </strong>
+       
+        <div class="avatar" onclick="window.location.href='../Html/my_profile.html'">👤</div>
+        <strong id="userRole">User </strong>
+    </div>
+</header>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <a href="#" class="nav-item active" data-page="Dashboard">
+                <span>🏠</span> Dashboard
+            </a>
+
+            <a href="#" class="nav-item" onclick="window.location.href='../Html/employee_manegment/employee.html'; return false;">
+                <span>👥</span> Employee Management
+            </a>
+
+            <a href="#" class="nav-item" onclick="window.location.href='../Html/attendance_management/attendance.html'">
+                <span>📅</span> Attendance
+            </a>
+
+            <!-- <a href="#" class="nav-item" data-page="Leave Management">
+                <span>🗓️</span> Leave Management
+            </a> -->
+
+            <a href="#" class="nav-item" onclick="window.location.href='../Html/payment_manegment/payment_summary.html'">
+                <span>₹</span> Salary Management
+            </a>
+
+            <a href="#" class="nav-item" onclick="window.location.href='../Html/payment_manegment/total_salary.html'">
+                <span>💳</span> Payment Management
+            </a>
+
+            <a href="#" class="nav-item"  onclick="window.location.href = '../Html/employee_manegment/view_employee.html'">
+                <span>📊</span> Reports
+            </a>
+
+            <a href="#" class="nav-item" data-page="AI Agent">
+                <span>🤖</span> AI Agent
+            </a>
+
+            <hr>
+
+            <a href="#" class="nav-item" onclick="window.location.href='../Html/my_profile.html'">
+                <span>👤</span> Profile
+            </a>
+
+            <a href="#" class="nav-item" onclick="window.location.href='../Html/login.html'">
+                <span>🚪</span> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="main">
+
+        <section class="heading">
+            <h1>Dashboard</h1>
+            <p>Welcome to Employee Management System</p>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="stats">
+
+            <article class="stat-card blue">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <p>Total Employees</p>
+                    <h2 id="totalEmployees">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card green">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <p>Present Today</p>
+                    <h2 id="presentToday">0</h2>
+                </div>
+            </article>
+
+            <article class="stat-card red">
+                <div class="stat-icon">✕</div>
+                <div>
+                    <p>Absent Today</p>
+                    <h2 id="absentToday">0</h2>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="middle-grid">
+
+            <!-- AI Agent Assistant -->
+            <article class="panel ai-panel">
+                <h2>AI Agent Assistant</h2>
+
+                <div class="ai-content">
+
+                    <div class="robot">
+                        <img src="../images/81cc3536-347f-4765-b21e-a5698af115a0.png"
+                             alt="AI Assistant Robot">
+                    </div>
+
+                    <div class="chat-area">
+
+                        <div class="speech" id = "answer">
+         Ask me anything...
+        (e.g. Employee salary,
+        attendance report)
+                        </div>
+
+                        <form id="questionForm">
+                            <input
+        type="number"
+        id="employee_id"
+        placeholder="Enter Employee ID"
+        min="1"
+        
+    >
+
+    <input
+        type="text"
+        id="question"
+        placeholder="Type your question here..."
+        required
+    >
+
+                            <div class="ask-row">
+                                <!-- <div id="answer"></div> -->
+
+                                <button type="submit" class="ask-btn">
+                                    ➤ Ask
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- Quick Actions -->
+            <article class="panel quick-panel">
+                <h2>Quick Actions</h2>
+
+                <div class="quick-grid">
+                    <button class="quick-action qa-green"
+                            onclick="window.location.href='../Html/attendance_management/attendance.html'">
+                        <span>☑️</span>
+                        Add Attendance
+                    </button>
+
+                   
+
+                    
+
+                    <button class="quick-action qa-yellow"
+                            onclick="window.location.href='../Html/payment_manegment/payment_summary.html'">
+                        <span>₹</span>
+                        Generate Salary
+                    </button>
+
+                    
+
+                    <button class="quick-action qa-purple"
+                            onclick="window.location.href='../Html/payment_manegment/make_payment.html'">
+                        <span>💳</span>
+                        Add Payment
+                    </button>
+                     <button class="quick-action qa-blue"
+                            onclick="window.location.href='../Html/employee_manegment/add_employee.html'">
+                        <span>👤➕</span>
+                        Add Employee
+                    </button>
+
+                    <button class="quick-action qa-cyan"
+                            onclick="window.location.href = '../Html/employee_manegment/view_employee.html'"
+                        <span>📊</span>
+                        View Reports
+                    </button>
+                    <button class="quick-action qa-red"
+                            data-page="Leave Management">
+                        <span>🗓️</span>
+                        Apply Leave
+                    </button>
+
+                </div>
+            </article>
+
+        </section>
+
+        <section class="bottom-grid">
+
+            <!-- Registered Users / My Profile -->
+<article class="panel employees-panel" id="usersPanel">
+
+    <div class="panel-heading">
+        <h2 id="usersHeading">My Profile</h2>
+    </div>
+
+    <div class="table-scroll">
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th id="actionHeading">Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="usersTableBody">
+                <!-- Data will load using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+</article>
+
+            <!-- Recent Activity -->
+            <article class="panel activity-panel">
+                <h2>Recent Activity</h2>
+
+                <div class="activity">
+                    <span class="dot dot-green"></span>
+                    <p>Attendance Marked - 18 Oct 2026</p>
+                </div>
+
+                <div class="activity">
+                    <span class="dot dot-yellow"></span>
+                    <p>Leave Applied - Priya Patil</p>
+                </div>
+
+                <div class="activity">
+                    <span class="dot dot-blue"></span>
+                    <p>Salary Generated - October 2026</p>
+                </div>
+            
+            </article>
+
+        </section>
+ <!-- Your dashboard content -->
+
+    <footer class="dashboard-footer">
+        <p>© 2026 Employee Management System. All rights reserved.</p>
+    </footer>
+    </main>
+</div>
+
+<script src="../Js/dashboard.js"></script>
+
+</body>
+</html>

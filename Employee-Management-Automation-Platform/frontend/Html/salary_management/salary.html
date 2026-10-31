@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Management</title>
+    <link rel="stylesheet" href="../../Css/style.css">
+</head>
+<body>
+
+    <div class="registration-container">
+        <h1>Employee Management System</h1>
+        <h2>Generate Salary</h2>
+
+        <form id="salaryForm">
+            <div class="form-group">
+                <label for="employee_id">Employee ID</label>
+                <input type="number" id="employee_id" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="month">Month</label>
+                <input type="text" id="month" placeholder="2026-10" required>
+            </div>
+
+            <button type="submit">Generate Salary</button>
+            <p id="message"></p>
+        </form>
+
+        <div id="salaryResult" class="result-container" style="display: none;">
+            <h2>Salary Details</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Month</th>
+                            <th>Final Salary</th>
+                            <th>Amount Paid</th>
+                            <th>Pending Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salaryTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <p class="login-link">
+            <a href="../dashboard.html">Back to Dashboard</a>
+        </p>
+    </div>
+
+    <script src="../../Js/salary_management/generate_salary.js"></script>
+</body>
+</html>

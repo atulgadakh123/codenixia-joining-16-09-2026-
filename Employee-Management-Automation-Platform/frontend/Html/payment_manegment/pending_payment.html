@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Payments</title>
+    <link rel="stylesheet" href="../../Css/payment.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pending Payments</h1>
+
+        <label for="employee_id">Employee ID</label>
+        <input type="number" id="employee_id" placeholder="Enter Employee ID" required>
+
+        <button type="button" id="searchButton">Search Pending Payment</button>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Total Salary</th>
+                        <th>Amount Paid</th>
+                        <th>Pending Balance</th>
+                        <th>Payment Status</th>
+                    </tr>
+                </thead>
+                <tbody id="pendingTableBody">
+                    <tr>
+                        <td colspan="5">Enter Employee ID to view pending payment.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="message"></p>
+
+        <button type="button" onclick="openPage('payment.html')">
+            Back to Payment Management
+        </button>
+    </div>
+
+    <script src="../../Js/payment_manegment/pending_payment.js"></script>
+</body>
+</html>

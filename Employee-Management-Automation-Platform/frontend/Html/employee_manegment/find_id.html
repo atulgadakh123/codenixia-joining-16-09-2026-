@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Employee</title>
+
+    <link rel="stylesheet" href="../../Css/add_employee.css">
+</head>
+
+<body>
+
+    <div class="registration-container">
+
+        <h1>Employee Management System</h1>
+        <h2>Find Employee</h2>
+
+        <form id="deleteEmployeeForm">
+
+            <div class="form-group">
+                <label for="employee_id">Employee ID</label>
+                <input
+                    type="number"
+                    id="employee_id"
+                    name="employee_id"
+                    placeholder="Enter employee ID"
+                    min="1"
+                    required
+                >
+            </div>
+
+            <button type="submit">Find Employee</button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <hr>
+
+        <h2>View Employees</h2>
+
+        <div style="overflow-x: auto;">
+
+            <table id="employeeTable" border="1"
+                   style="width: 100%; border-collapse: collapse;">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Joining Date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+
+                <tbody id="employeeTableBody">
+                    <!-- Employee data will appear here -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <p class="login-link">
+            <a href="employee.html">Back to Employee Management</a>
+        </p>
+
+        <p class="login-link">
+            <a href="../../Html/dashboard.html">Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="../../Js/employee_manegment/find_id.js"></script>
+
+</body>
+</html>

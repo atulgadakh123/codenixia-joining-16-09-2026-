@@ -1,0 +1,234 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #eef5ff, #f8faff, #f0edff);
+    color: #17345f;
+}
+
+/* Main Container */
+.registration-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 40px;
+    background: #ffffff;
+    border: 1px solid #e1eaff;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(31, 70, 130, 0.10);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #123568;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+h2 {
+    text-align: center;
+    color: #2879e8;
+    font-size: 23px;
+    margin-bottom: 30px;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 12px auto 0;
+    background: #2879e8;
+    border-radius: 5px;
+}
+
+/* All Employee Forms */
+#addEmployeeForm,
+#deleteEmployeeForm,
+#searchEmployeeForm,
+#updateEmployeeForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 22px;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.form-group label {
+    color: #304765;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Input Fields */
+.form-group input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid #cfdaea;
+    border-radius: 9px;
+    background: #fbfdff;
+    color: #1e293b;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #9aa8ba;
+}
+
+.form-group input:focus {
+    border-color: #2879e8;
+    box-shadow: 0 0 0 3px rgba(40, 121, 232, 0.12);
+    background: #ffffff;
+}
+
+/* Buttons */
+#addEmployeeForm button[type="submit"],
+#deleteEmployeeForm button[type="submit"],
+#searchEmployeeForm button[type="submit"],
+#updateEmployeeForm button[type="submit"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #2879e8, #1756c0);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(40, 121, 232, 0.18);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#addEmployeeForm button[type="submit"]:hover,
+#deleteEmployeeForm button[type="submit"]:hover,
+#searchEmployeeForm button[type="submit"]:hover,
+#updateEmployeeForm button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 18px rgba(40, 121, 232, 0.25);
+}
+
+/* Hidden Update Form */
+#updateEmployeeForm[hidden] {
+    display: none;
+}
+
+/* Message */
+#message {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* Navigation Links */
+.login-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #246bd0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.login-link a:hover {
+    color: #123568;
+    text-decoration: underline;
+}
+
+/* Employee Table */
+#employeeTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    color: #304765;
+    font-size: 14px;
+}
+
+#employeeTable th,
+#employeeTable td {
+    padding: 12px;
+    border: 1px solid #d9e4f3;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#employeeTable th {
+    background: #2879e8;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#employeeTable tbody tr:nth-child(even) {
+    background: #f3f7ff;
+}
+
+#employeeTable tbody tr:hover {
+    background: #e8f1ff;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 1px solid #d9e4f3;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .registration-container {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+        margin-bottom: 25px;
+    }
+
+    #addEmployeeForm,
+    #deleteEmployeeForm,
+    #searchEmployeeForm,
+    #updateEmployeeForm {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    #employeeTable {
+        font-size: 12px;
+    }
+
+    #employeeTable th,
+    #employeeTable td {
+        padding: 9px;
+    }
+}

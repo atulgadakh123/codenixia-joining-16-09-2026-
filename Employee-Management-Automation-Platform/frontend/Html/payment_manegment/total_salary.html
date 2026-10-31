@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="../../Css/payment.css">
+</head>
+
+<body>
+
+    <h1>Payment</h1>
+<button
+        type="button"
+        id="back_btn"
+        onclick="window.location.href='../../Html/dashboard.html'"
+    >
+        Back to Dashboard
+    </button>
+
+    <!-- Employee ID, Month, Year Search -->
+    <div class="search-section">
+
+        <div>
+            <label for="employee_id">Employee ID</label>
+            <input
+                type="number"
+                id="employee_id"
+                placeholder="Enter Employee ID"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="month">Month</label>
+            <input
+                type="number"
+                id="month"
+                min="1"
+                max="12"
+                placeholder="Enter Month"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="year">Year</label>
+            <input
+                type="number"
+                id="year"
+                min="2020"
+                placeholder="Enter Year"
+                required
+            >
+        </div>
+
+        <button type="button" id="search_btn">
+            Search
+        </button>
+
+    </div>
+
+    <hr>
+
+    <!-- Salary Summary Boxes -->
+    <div class="summary-section">
+
+        <div>
+            <h3>Total Days</h3>
+            <p id="total_days">0</p>
+        </div>
+
+        <div>
+            <h3>Present Days</h3>
+            <p id="present_days">0</p>
+        </div>
+
+        <div>
+            <h3>Total Salary</h3>
+            <p id="total_salary">₹0</p>
+        </div>
+
+        <div>
+            <h3>Pending Salary</h3>
+            <p id="pending_salary">₹0</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Add Payment -->
+    <h2>Add Payment</h2>
+
+    <form id="payment_form">
+        <div>
+            <label for="Enter the id">ID</label>
+            <input
+                type="number"
+                id="id"
+                placeholder="Enter the ID"
+                readonly
+            >
+        </div>
+
+        <div>
+            <label for="total_salary_input">Total Salary (₹)</label>
+            <input
+                type="number"
+                id="total_salary_input"
+                placeholder="Total Salary"
+                readonly
+            >
+        </div>
+
+        <div>
+            <label for="balance">Balance (₹)</label>
+            <input
+                type="number"
+                id="balance"
+                placeholder="Balance"
+                readonly
+            >
+        </div>
+
+        <div>
+            <label for="amount">Amount (₹)</label>
+            <input
+                type="number"
+                id="amount"
+                placeholder="Enter Amount"
+                min="1"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="payment_status">Payment Status</label>
+            <select id="payment_status" required>
+                <option value="paid">Paid</option>
+                <option value="pending">Pending</option>
+            </select>
+        </div>
+
+        <button type="button" id="pay_btn" onclick="window.location.href='make_payment.html'">
+             Pay
+                </button>
+
+    </form>
+
+    <hr>
+
+    <!-- All Employee Payments -->
+    <h2>All Employee Payments</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee ID</th>
+                <th>Amount</th>
+                <th>Balance</th>
+                <th>Total Salary</th>
+                <th>Payment Date</th>
+                <th>Payment Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="payment_table_body">
+            <tr>
+                <td colspan="7">No payment records available</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <!-- Back to Dashboard -->
+    
+
+    <!-- JavaScript -->
+    <script src="../../Js/payment_manegment/total_salary.js"></script>
+
+</body>
+</html>

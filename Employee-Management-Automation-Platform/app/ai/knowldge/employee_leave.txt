@@ -1,0 +1,7 @@
+Employee Leave
+
+Employees may request leave when they are unable to attend work.
+
+Leave information may include employee ID, leave type, start date, end date, reason, and approval status.
+
+Employees should follow the company's leave policy when requesting and using leave.

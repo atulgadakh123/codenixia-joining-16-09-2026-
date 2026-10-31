@@ -1,0 +1,7 @@
+Employee Profile
+
+An employee profile contains basic information about an employee.
+
+Employee information may include employee ID, name, email, department, designation, joining date, contact information, and employment status.
+
+Employee profiles should be maintained accurately and updated when employee information changes.

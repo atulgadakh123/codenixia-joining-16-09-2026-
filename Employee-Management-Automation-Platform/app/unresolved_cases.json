@@ -1,0 +1,9 @@
+[
+    {
+        "employee_id": 1,
+        "question": "What is my salary status?",
+        "reason": "get_salary_status returned an error or no records were found.",
+        "status": "pending",
+        "created_at": "2026-10-02T12:10:18"
+    }
+]

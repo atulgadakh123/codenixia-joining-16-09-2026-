@@ -1,0 +1,7 @@
+Employee Performance
+
+Employee performance represents how effectively an employee completes assigned responsibilities.
+
+Performance evaluation may consider task completion, attendance, work quality, technical skills, learning progress, communication, and project contributions.
+
+Performance results can be used to identify areas for improvement and future development.

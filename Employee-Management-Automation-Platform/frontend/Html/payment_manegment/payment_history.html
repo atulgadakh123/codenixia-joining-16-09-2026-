@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History</title>
+    <link rel="stylesheet" href="../../Css/payment.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Payment History</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Employee ID</th>
+                        <th>Total Salary</th>
+                        <th>Amount Paid</th>
+                        <th>Balance</th>
+                        <th>Payment Status</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentTableBody">
+                    <tr>
+                        <td colspan="6">Loading payment history...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="message"></p>
+
+        <button type="button" onclick="openPage('payment.html')">
+            Back to Payment Management
+        </button>
+    </div>
+
+    <script src="../../Js/payment_manegment/payment_history.js"></script>
+</body>
+</html>

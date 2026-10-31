@@ -1,0 +1,7 @@
+Employee Attendance
+
+Employee attendance records track the working presence of employees.
+
+Attendance information may include employee ID, date, check-in time, check-out time, and attendance status.
+
+Attendance records can be used for monitoring employee presence and calculating working days.

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Attendance</title>
+    <link rel="stylesheet" href="../../Css/attendance.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add Attendance</h1>
+
+        <form id="attendanceForm">
+
+            <label for="employee_id">Employee ID</label>
+            <input
+                type="number"
+                id="employee_id"
+                name="employee_id"
+                min="1"
+                required
+            >
+
+            <label for="status">Attendance Status</label>
+            <select id="status" name="status" required>
+                <option value="">Select Status</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit">Add Attendance</button>
+
+            <button
+                type="button"
+                onclick="window.location.href='attendance.html'"
+            >
+                Back
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </div>
+
+    <script src="../../Js/attendance_management/add_attendance.js"></script>
+
+</body>
+</html>

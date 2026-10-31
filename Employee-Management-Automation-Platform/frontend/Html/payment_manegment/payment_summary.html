@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Employee Salary Slip</title>
+
+    <link rel="stylesheet" href="../../Css/salary_slip.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="salary-header">
+            <div>
+                <h1>Employee Payment Summary</h1>
+                <p>View employee salary details for selected month and year</p>
+            </div>
+        </header>
+
+        <!-- Search Form -->
+        <form id="summaryForm" class="summary-form">
+
+            <div class="form-group">
+                <label for="employee_id">Employee ID</label>
+                <input
+                    type="number"
+                    id="employee_id"
+                    name="employee_id"
+                    min="1"
+                    placeholder="Enter Employee ID"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="month">Month</label>
+                <select id="month" name="month" required>
+                    <option value="">Select Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input
+                    type="number"
+                    id="year"
+                    name="year"
+                    min="2000"
+                    max="2100"
+                    placeholder="Enter Year"
+                    required
+                >
+            </div>
+
+            <button type="submit">Get Payment Summary</button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <!-- Salary Slip -->
+        <section id="salarySlip" class="salary-slip" hidden>
+
+            <div class="employee-header">
+
+                <div class="employee-info">
+                    <h2 id="employee_name">Employee Name</h2>
+
+                    <p>
+                        <strong>Employee ID:</strong>
+                        <span id="display_employee_id">-</span>
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <span id="employee_email">-</span>
+                    </p>
+
+                    <p>
+                        <strong>Joining Date:</strong>
+                        <span id="joining_date">-</span>
+                    </p>
+                </div>
+
+                <div class="slip-title">
+                    <h2>Salary Slip</h2>
+                    <p id="salary_month_year">Monthly Salary Details</p>
+                </div>
+
+            </div>
+
+            <!-- All Salary Fields -->
+            <div class="salary-cards">
+
+                <div class="salary-card">
+                    <h3>Total Salary</h3>
+                    <p id="total_salary">₹ 0.00</p>
+                </div>
+
+                <div class="salary-card paid">
+                    <h3>Amount Paid</h3>
+                    <p id="amount_paid">₹ 0.00</p>
+                </div>
+
+                <div class="salary-card balance">
+                    <h3>Balance</h3>
+                    <p id="balance">₹ 0.00</p>
+                </div>
+
+                <div class="salary-card">
+                    <h3>Payment Date</h3>
+                    <p id="payment_date">-</p>
+                </div>
+
+                <div class="salary-card">
+                    <h3>Payment Status</h3>
+                    <p id="payment_status">-</p>
+                </div>
+
+                <div class="salary-card paid">
+                    <h3>Present Days</h3>
+                    <p id="present_days">0</p>
+                </div>
+
+                <div class="salary-card balance">
+                    <h3>Absent Days</h3>
+                    <p id="absent_days">0</p>
+                </div>
+
+            </div>
+
+            <!-- Payment Details Table -->
+            <div class="table-container">
+
+                <h2>Payment Details</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Employee ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Joining Date</th>
+                            <th>Month</th>
+                            <th>Year</th>
+                            <th>Total Salary</th>
+                            <th>Amount Paid</th>
+                            <th>Balance</th>
+                            <th>Payment Date</th>
+                            <th>Payment Status</th>
+                            <th>Present Days</th>
+                            <th>Absent Days</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="summaryTableBody">
+                        <tr>
+                            <td colspan="13">
+                                Enter Employee ID, Month and Year to view salary slip.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="window.location.href='../../Html/dashboard.html'">
+            Back to Payment Management
+        </button>
+
+    </div>
+
+    <script src="../../Js/payment_manegment/payment_summary.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Employee Salary
+
+Employee salary is the compensation paid to an employee for their work.
+
+Salary information may include employee ID, base salary, working days, present days, absent days, final salary, amount paid, and pending payment.
+
+Salary can be calculated based on the employee's salary structure and attendance records.

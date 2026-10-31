@@ -1,0 +1,7 @@
+Employee Training
+
+Employee training helps employees improve their technical and professional skills.
+
+Training may include Python, FastAPI, Artificial Intelligence, Machine Learning, Generative AI, LLMs, RAG, AI Agents, testing, debugging, and software development.
+
+Employees should complete assigned training tasks and report their progress to their supervisor.
